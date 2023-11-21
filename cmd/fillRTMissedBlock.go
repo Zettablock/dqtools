@@ -11,6 +11,7 @@ import (
 
 var blocks string
 var file string
+var autoyes bool
 
 // fillRTMissedBlockCmd represents the fillMissedBlock command
 var fillRTMissedBlockCmd = &cobra.Command{
@@ -52,5 +53,6 @@ func init() {
 	fillRTMissedBlockCmd.Flags().StringVarP(&file, "file", "f", "", "Help message for toggle")
 	fillRTMissedBlockCmd.MarkFlagsOneRequired("blocks", "file")
 	fillRTMissedBlockCmd.MarkFlagsMutuallyExclusive("blocks", "file")
+	fillRTMissedBlockCmd.Flags().BoolVarP(&autoyes, "autoyes", "a", false, "auto yes without confirm")
 
 }

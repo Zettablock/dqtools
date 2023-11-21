@@ -13,4 +13,4 @@ COPY cmd/*.go ./cmd/
 # Build
 RUN CGO_ENABLED=0 GOOS=linux go build
 
-ENTRYPOINT ["top", "-b"]
+CMD ["bash"]
